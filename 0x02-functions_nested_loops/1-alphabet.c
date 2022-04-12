@@ -1,4 +1,4 @@
-#include "holberton.h"
+#include "main.h"
 
 /**
  * print_alphabet - Check description
@@ -13,4 +13,3 @@ void print_alphabet(void)
 		_putchar(i);
 	_putchar('\n');
 }
-
