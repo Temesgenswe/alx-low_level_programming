@@ -1,5 +1,4 @@
 #include "main.h"
-
 /**
  * print_diagonal - print diagonal signal
  * @n: value to create matriz
