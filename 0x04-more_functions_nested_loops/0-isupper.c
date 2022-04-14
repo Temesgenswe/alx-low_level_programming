@@ -1,4 +1,4 @@
-#include "holberton.h"
+#include "main.h"
 /**
  * _isupper - Checked if a character is a upper character
  * @c: Value in ascii to be cheke
