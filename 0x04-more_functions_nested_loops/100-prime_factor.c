@@ -1,31 +1,18 @@
-#include "main.h"
+#include <stdio.h>
+
 /**
- * print_triangle - prints a triangule of n size
- * @size: define the size of the matrix
- *
- * Return: Void
+ * main - Entry point
+ * Return: Always 0
  */
-
-void print_triangle(int size)
+int main(void)
 {
-	int i, j;
+	unsigned long int i = 3, n = 612852475143;
 
-	if (size > 0)
+	for (; i < 12057; i += 2)
 	{
-		for (i = 0; i < size; i++)
-		{
-			for (j = 0; j < size; j++)
-			{
-				if ((i + j) >= (size - 1))
-					_putchar('#');
-				else
-					_putchar(32);
-			}
-			_putchar('\n');
-		}
-	} else
-		if (size == 1)
-			_putchar('#');
-		else
-			_putchar('\n');
+		while (n % i == 0 && n != i)
+			n /= i;
+	}
+	printf("%lu\n", n);
+	return (0);
 }
