@@ -1,59 +1,60 @@
 #include "main.h"
-#include <stdio.h>
-
 /**
- * main - check the code
- *
- * Return: Always 0.
- */
-int main(void)
+  * infinite_add - add two numbers
+  * @n1: first number
+  * @n2: second number
+  * @r: the buffer
+  * @size_r: the size of r
+  * Return: char
+  */
+char *infinite_add(char *n1, char *n2, char *r, int size_r)
 {
-        char *n = "1234567892434574367823574575678477685785645685876876774586734734563456453743756756784458";
-        char *m = "9034790663470697234682914569346259634958693246597324659762347956349265983465962349569346";
-        char r[100];
-        char r2[10];
-        char r3[11];
-        char *res;
 
-        res = infinite_add(n, m, r, 100);
-        if (res == 0)
-        {
-                printf("Error\n");
-        }
-        else
-        {
-                printf("%s + %s = %s\n", n, m, res);
-        }
-        n = "1234567890";
-        m = "1";
-        res = infinite_add(n, m, r2, 10);
-        if (res == 0)
-        {
-                printf("Error\n");
-        }
-        else
-        {
-                printf("%s + %s = %s\n", n, m, res);
-        }
-        n = "999999999";
-        m = "1";
-        res = infinite_add(n, m, r2, 10);
-        if (res == 0)
-        {
-                printf("Error\n");
-        }
-        else
-        {
-                printf("%s + %s = %s\n", n, m, res);
-        }
-        res = infinite_add(n, m, r3, 11);
-        if (res == 0)
-        {
-                printf("Error\n");
-        }
-        else
-        {
-                printf("%s + %s = %s\n", n, m, res);
-        }
-        return (0);
+	int i = 0;
+	int j = 0;
+	int count = 0;
+	int digit = 0;
+	unsigned int digitval;
+	unsigned int value1 = 0;
+	unsigned int value2 = 0;
+	unsigned int value3 = 0;
+	char *p = r;
+
+	while (n1[i + 1])
+	{
+		n1++;
+		i++;
+	}
+	while (i)
+	{
+		value1 += n1[i] - '0';
+		i--;
+	}
+	while (n2[j + 1])
+	{
+		n2++;
+		j++;
+	}
+	while (j)
+	{
+		value2 += n2[j - '0'];
+		j--;
+	}
+	value3 = value1 + value2;
+	digitval = value3;
+	while (digitval / 10)
+	{
+		count += 1;
+		digitval /= 10;
+	}
+	count += 1;
+	if (count > size_r)
+		return (0);
+	for (; count; count--)
+	{
+		digit = (value3 % 10);
+		value3 = (value3 - digit);
+		r[count] = digit + '0';
+	}
+	return (p);
 }
