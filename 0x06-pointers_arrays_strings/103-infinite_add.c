@@ -1,22 +1,45 @@
 #include "main.h"
 /**
- * print_number - print intenger number
- * @n: integer
- *
- * Return: none
+ * infinite_add - adds two numbers.
+ * @n1:char
+ * @n2:char.
+ * @r:char
+ * @size_r:int
+ * Return:char.
  */
-void print_number(int n)
+char *infinite_add(char *n1, char *n2, char *r, int size_r)
 {
-	int a;
+int i, j, k, l, m, n;
 
-	if (n < 0)
+	for (i = 0; n1[i]; i++)
+		;
+	for (j = 0; n2[j]; j++)
+		;
+	if (i > size_r || j > size_r)
+		return (0);
+	m = 0;
+	for (i -= 1, j -= 1, k = 0; k < size_r - 1; i--, j--, k++)
 	{
-		_putchar('-');
-		a = n * -1;
+		n = m;
+		if (i >= 0)
+			n += n1[i] - '0';
+		if (j >= 0)
+			n += n2[j] - '0';
+		if (i < 0 && j < 0 && n == 0)
+		{
+			break;
+		}
+		m = n / 10;
+		r[k] = n % 10 + '0';
 	}
-	else
-		 a = n;
-	if (n / 10)
-		print_number(a / 10);
-	_putchar(a % 10 + '0');
+	r[k] = '\0';
+	if (i >= 0 || j >= 0 || m)
+		return (0);
+	for (k -= 1, l = 0; l < k; k--, l++)
+	{
+		m = r[k];
+		r[k] = r[l];
+		r[l] = m;
+	}
+	return (r);
 }
