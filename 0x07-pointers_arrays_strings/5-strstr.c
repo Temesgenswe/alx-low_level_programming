@@ -1,28 +1,24 @@
-#include "main.h"
+#include <stdlib.h>
+
+/**
+ * *_strstr - searches string for any set of bytes
+ * @haystack: pointer to a string
+ * @needle: pointer to a string
+ * Return: pointer
+ */
 char *_strstr(char *haystack, char *needle)
 {
-int x;
+		if (needle == '\0')
+			return (haystack);
 
-	if (*needle == 0)
-		return (haystack);
-
-	while (*haystack)
-	{
-		x = 0;
-
-		if (haystack[x] == needle[x])
+		while (*haystack != '\0')
 		{
-			do {
-				if (needle[x + 1] == '\0')
-					return (haystack);
-
-				x++;
-
-			} while (haystack[x] == needle[x]);
+			if (*haystack == *needle)
+				return (haystack);
+			haystack++;
 		}
 
-		haystack++;
-	}
-
-	return ('\0');
+		if (*haystack != *needle)
+			return (NULL);
+		return (0);
 }
