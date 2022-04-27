@@ -2,11 +2,11 @@
 
 
 /**
- * _print_rev_recursion -
+ * _print_rev_recursion - Prints a string in reverse
  * @s: string
  *
  * Return: On success 1.
- * On error, 
+ * On error, -1 is returned, and errno is set appropriately.
  */
 void _print_rev_recursion(char *s)
 {
