@@ -1,4 +1,7 @@
 #include "main.h"
+/*
+* this is function for recursion
+*/
 void _puts_recursion(char *s)
 {
 	if (*s == 0)
