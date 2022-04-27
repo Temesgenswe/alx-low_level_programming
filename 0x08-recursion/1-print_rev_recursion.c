@@ -1,9 +1,12 @@
 #include "main.h"
 
+
 /**
- * main - check the code
+ * _print_rev_recursion -
+ * @s: string
  *
- * Return: Always 0.
+ * Return: On success 1.
+ * On error, 
  */
 void _print_rev_recursion(char *s)
 {
