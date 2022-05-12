@@ -1,22 +1,20 @@
-#ifndef VARIADIC_FUNCTIONS_H
-#define VARIADIC_FUNCTIONS_H
-#include <stdarg.h>
+#ifndef _FUNCTION_VARIADIC_H_
+#define _FUNCTION_VARIADIC_H_
 
 int sum_them_all(const unsigned int n, ...);
 void print_numbers(const char *separator, const unsigned int n, ...);
 void print_strings(const char *separator, const unsigned int n, ...);
 void print_all(const char * const format, ...);
-
+#include<stdarg.h>
 /**
- * struct format - Data type of a format.
- * @op: Format.
- * @f: Function.
- *
+ * struct print - multiple choice print
+ * @x: char Type of print
+ * @T_func: funct
  */
-
-typedef struct format
+typedef struct print
 {
-	char *op;
-	void (*f)(va_list all);
-} f;
+	char *x;
+	void (*T_func)(va_list);
+} t_print;
+
 #endif
