@@ -1,9 +1,10 @@
 #include "lists.h"
 
-/* This is The Main for ALX-Temesgenswe
-*
-*return always zero
-*/
+/**
+ * main - check the code
+ * 
+ * Return: Always 0.
+ */
 
 size_t print_listint(const listint_t *h)
 {
