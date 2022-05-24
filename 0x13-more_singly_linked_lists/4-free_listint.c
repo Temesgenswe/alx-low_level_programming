@@ -4,9 +4,8 @@
 #include "lists.h"
 
 /**
- * main - check the code
- *
- * Return: Always 0.
+ * free_listint - frees a listint_t list.
+ * @head: pointer to the list.
  */
 void free_listint(listint_t *head)
 {
